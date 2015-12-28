@@ -35,7 +35,7 @@
                     <!-- MainClass in mainfest make a executable jar -->
                     <archive>
                         <manifest>
-                            <mainClass>org.zigmoi.expncal.api.xl.Request</mainClass>
+                            <mainClass>org.zigmoi.expncal.AppMain</mainClass>
                         </manifest>
                     </archive>
 
