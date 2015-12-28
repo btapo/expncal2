@@ -82,39 +82,4 @@ public class Request {
         }
         return mCalcList;
     }
-
-    public static void main(String... args) throws FileNotFoundException, ParseException {
-//        Request req = new Request("C:\\Users\\Zigmoi-Code\\Downloads\\Expenditure_May_2015.xlsx", "C:\\Users\\Zigmoi-Code\\Google Drive\\ChawaDs_Zigmoi\\ChawaDs\\MyScripts\\Java\\expncal2\\data\\xl_param_file.config");
-//        Request req = new Request("C:\\Users\\Zigmoi-Code\\Google Drive\\ChawaDs_Zigmoi\\ChawaDs\\MyScripts\\Java\\expncal2\\data\\Expenditure_June_2015.xlsx", "C:\\Users\\Zigmoi-Code\\Google Drive\\ChawaDs_Zigmoi\\ChawaDs\\MyScripts\\Java\\expncal2\\data\\xl_param_file.config");
-      
-//        String paramF = "E:\\google_drive\\chawads\\ChawaDs_Zigmoi\\ChawaDs\\MyScripts\\Java\\expncal2\\data\\xl_param_file.config";
-//        String dataF = "E:\\google_drive\\chawads\\ChawaDs_Zigmoi\\ChawaDs\\MyScripts\\Java\\expncal2\\data\\1_Expenditure_June_2015.xls";
-//        Request req = new Request(dataF, paramF);
-//        req.getResponse();
-        
-        String dataF = null;
-        if (args == null || args.length == 0) {
-//            dataF = "E:\\google_drive\\chawads\\ChawaDs_Zigmoi\\ChawaDs\\MyScripts\\Java\\expncal2\\data\\1_Expenditure_July_august_2015.xls";
-//            dataF = "E:\\google_drive\\chawads\\ChawaDs_Zigmoi\\ChawaDs\\MyScripts\\Java\\expncal2\\data\\1_Expenditure_June_2015.xls";
-            System.err.println("Err. Enter the file name as argument to process.");
-            System.exit(1);
-        } else {
-           dataF = args[0];
-        }
-        
-        String basePath = new File("").getAbsolutePath();
-        String paramF = basePath + File.separator + "xl_param_file.config";
-        
-        String outFile = 
-                   basePath + File.separator + "out" + File.separator
-                + new File(dataF).getName() + "_" + 
-                new Date().getTime() + ".txt";
-        
-        FileOutputStream fstream3 = new FileOutputStream(outFile);
-        PrintStream outPut = new PrintStream(fstream3);
-        System.setOut(outPut);
-        
-        Request req = new Request(dataF, paramF);
-        req.getResponse();
-    }
 }
